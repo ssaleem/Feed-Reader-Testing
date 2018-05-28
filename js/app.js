@@ -86,13 +86,14 @@ function init() {
 /* Google API: Loads the Feed Reader API and defines what function
  * to call when the Feed Reader API is done loading.
  */
-$(google.setOnLoadCallback(init);
+google.setOnLoadCallback(init);
 
 /* All of this functionality is heavily reliant upon the DOM, so we
  * place our code in the $() function to ensure it doesn't execute
  * until the DOM is ready.
  */
-function() {
+$(function() {
+
     var container = $('.feed'),
         feedList = $('.feed-list'),
         feedItemTemplate = Handlebars.compile($('.tpl-feed-list-item').html()),

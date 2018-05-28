@@ -1,6 +1,7 @@
 # Feed Reader Testing 
 
-This project tests a web-based application that reads RSS feeds using [Jasmine 3.1.0](https://ssaleem.github.io/Feed-Reader-Testing/). Jasmine is a behavior-driven development framework for testing JavaScript code. Project demo can be found [here]()
+This project tests a web-based application that reads RSS feeds using [Jasmine](https://jasmine.github.io/) 3.1.0. Jasmine is a behavior-driven development framework for testing JavaScript code. 
+<!-- Project demo can be found [here]() -->
 
 ## How to run tests
 - Click "Clone or download" / "Download ZIP".
