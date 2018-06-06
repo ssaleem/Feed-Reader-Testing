@@ -93,8 +93,8 @@ $(function() {
          });
 
          it('has at least a single .entry element within the .feed container when loadFeed() is called', function(done){
-            let container = document.querySelector('.feed');
-            expect(container.hasChildNodes()).toBe(true);
+            let entryElements = document.querySelector('.feed').querySelectorAll('.entry');
+            expect(entryElements.length).toBeGreaterThan(0);
             done();
          });
 
@@ -102,23 +102,25 @@ $(function() {
     /* Test suite named "New Feed Selection" */
     describe('New Feed Selection', function(){
 
-        /* TODO: Write a test that ensures when a new feed is loaded
+        /* Test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
+         * loadFeed() is asynchronous.
          */
          let container = document.querySelector('.feed');
          let contentBefore = '';
+         let contentAfter = '';
          beforeEach(function(done){
             loadFeed(0, function(){
                 contentBefore = container.textContent;
-            });
-            loadFeed(1, function(){
-                done();
+                loadFeed(1, function(){
+                    contentAfter = container.textContent;
+                    done();
+                });
             });
          });
 
          it('new feed is loaded when loadFeed() is called', function(done){
-            let contentAfter = container.textContent;
+
             expect(contentAfter).not.toBe(contentBefore);
             done();
          });
